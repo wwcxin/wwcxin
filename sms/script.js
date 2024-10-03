@@ -20,7 +20,7 @@ function generateMessage() {
             const responses = ['已收到', '收到了', '拿到了'];
             response = responses[Math.floor(Math.random() * responses.length)];
         } else {
-            initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}收到时是否完好？`;
+            initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}收到时外包装是否完好？`;
             response = '包装是好的';
         }
 
@@ -51,23 +51,42 @@ function addDateSeparator() {
 function addMessage(content, type) {
     const chatMessages = document.getElementById('chatMessages');
     const messageWrapper = document.createElement('div');
-    messageWrapper.classList.add('message-wrapper', `${type}-wrapper`);
+    messageWrapper.className = `message-wrapper ${type}-wrapper`;
+
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar';
+
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+
+    const message = document.createElement('div');
+    message.className = `message ${type}`;
+    message.textContent = content;
+
+    const time = document.createElement('div');
+    time.className = 'message-time';
     
-    const avatarElement = document.createElement('div');
-    avatarElement.classList.add('avatar', `${type}-avatar`);
-    
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', type);
-    messageElement.textContent = content;
-    
-    const timeElement = document.createElement('div');
-    timeElement.classList.add('message-time');
-    timeElement.textContent = getCurrentTime();
-    
-    messageWrapper.appendChild(avatarElement);
-    messageWrapper.appendChild(messageElement);
-    messageWrapper.appendChild(timeElement);
+    // 根据消息类型设置不同的时间
+    const now = new Date();
+    if (type === 'sender') {
+        // 发送者消息时间往前推一分钟
+        now.setMinutes(now.getMinutes() - 1);
+    }
+    time.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    messageContent.appendChild(message);
+    messageContent.appendChild(time);
+
+    if (type === 'sender') {
+        messageWrapper.appendChild(avatar);
+        messageWrapper.appendChild(messageContent);
+    } else {
+        messageWrapper.appendChild(avatar);
+        messageWrapper.appendChild(messageContent);
+    }
+
     chatMessages.appendChild(messageWrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 function getCurrentTime() {
