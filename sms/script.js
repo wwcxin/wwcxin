@@ -51,21 +51,21 @@ function addDateSeparator() {
 function addMessage(content, type) {
     const chatMessages = document.getElementById('chatMessages');
     const messageWrapper = document.createElement('div');
-    messageWrapper.className = `message-wrapper ${type}-wrapper`;
+    messageWrapper.className = `message-wrapper-${type}`;
 
     const avatar = document.createElement('div');
-    avatar.className = 'avatar';
+    avatar.className = `avatar-${type}`;
     avatar.innerHTML = `<svg class="icon icon-touxiang" aria-hidden="true"><use xlink:href="#icon-touxiang"></use></svg>`;
 
     const messageContent = document.createElement('div');
-    messageContent.className = 'message-content';
+    messageContent.className = `message-content-${type}`;
 
-    const message = document.createElement('div');
-    message.className = `message ${type}`;
-    message.textContent = content;
+    const messageBubble = document.createElement('div');
+    messageBubble.className = `message-bubble-${type}`;
+    messageBubble.textContent = content;
 
     const time = document.createElement('div');
-    time.className = 'message-time';
+    time.className = `message-time-${type}`;
     
     const now = new Date();
     if (type === 'sender') {
@@ -73,7 +73,7 @@ function addMessage(content, type) {
     }
     time.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    messageContent.appendChild(message);
+    messageContent.appendChild(messageBubble);
     messageContent.appendChild(time);
 
     if (type === 'sender') {

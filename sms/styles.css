@@ -51,12 +51,15 @@ body {
     margin-left: 15px;
 }
 
+/* 聊天消息容器 */
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto;
     padding: 10px;
+    background-color: #f0f0f0;
 }
 
+/* 日期分隔符 */
 .date-separator {
     text-align: center;
     color: #999;
@@ -64,103 +67,92 @@ body {
     margin: 20px 0 10px;
 }
 
-.message-wrapper {
+/* 消息包装器 */
+.message-wrapper-sender,
+.message-wrapper-receiver {
     display: flex;
     margin-bottom: 15px;
-    align-items: flex-end;
+    width: 100%;
 }
 
-.sender-wrapper {
-    flex-direction: row-reverse;
+.message-wrapper-sender {
+    justify-content: flex-end;
+}
+
+.message-wrapper-receiver {
     justify-content: flex-start;
 }
 
-.receiver-wrapper {
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.avatar {
+/* 头像样式 */
+.avatar-sender,
+.avatar-receiver {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     flex-shrink: 0;
 }
 
-.sender-wrapper .avatar {
+.avatar-sender {
+    order: 1;
     margin-left: 10px;
-    margin-right: 0;
 }
 
-.receiver-wrapper .avatar {
+.avatar-receiver {
+    order: 0;
     margin-right: 10px;
-    margin-left: 0;
 }
 
-.message-content {
+/* 消息内容容器 */
+.message-content-sender,
+.message-content-receiver {
     max-width: 70%;
-}
-
-.sender-wrapper .message-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 将消息内容靠右对齐 */
 }
 
-.sender .message {
-    background-color: #8A2BE2; /* 紫色背景 */
-    color: white;
-    border-radius: 18px;
-    border-top-right-radius: 4px;
-    padding: 10px;
-    display: inline-block; /* 使背景自适应文字长度 */
-    max-width: 100%; /* 确保消息不会超出容器 */
+.message-content-sender {
+    align-items: flex-end;
 }
 
-.sender-wrapper .message-content {
-    margin-right: 0;
+.message-content-receiver {
+    align-items: flex-start;
 }
 
-.receiver-wrapper .message-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* 将消息内容靠左对齐 */
-}
-
-.message {
+/* 消息气泡 */
+.message-bubble-sender,
+.message-bubble-receiver {
     padding: 10px;
     border-radius: 18px;
+    max-width: 100%;
     word-wrap: break-word;
 }
 
-.sender .message {
-    background-color: #8A2BE2; /* 紫色背景 */
+.message-bubble-sender {
+    background-color: #8A2BE2;
     color: white;
     border-top-right-radius: 4px;
 }
 
-.receiver .message {
-    background-color: #E0E0E0; /* 灰色背景 */
+.message-bubble-receiver {
+    background-color: #E0E0E0;
     color: black;
-    border-radius: 18px;
     border-top-left-radius: 4px;
-    padding: 10px;
-    display: inline-block; /* 使背景自适应文字长度 */
-    max-width: 100%; /* 确保消息不会超出容器 */
 }
 
-.message-time {
+/* 消息时间 */
+.message-time-sender,
+.message-time-receiver {
     font-size: 12px;
     color: #999;
     margin-top: 4px;
 }
 
-.sender-wrapper .message-time {
-    text-align: right;
+.message-time-sender {
+    align-self: flex-start;
 }
 
-.receiver-wrapper .message-time {
-    text-align: left;
+.message-time-receiver {
+    align-self: flex-end;
 }
 
 .chat-input-container {
@@ -188,3 +180,9 @@ body {
 }
 
 /* 保持原有的表单样式 */
+
+/* 确保发件人消息和时间不会被头像遮挡 */
+.message-content-sender .message,
+.message-content-sender .message-time {
+    max-width: calc(100% - 50px);
+}
