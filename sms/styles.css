@@ -14,26 +14,7 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h1, .description {
-    text-align: center;
-}
-
-input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
+/* 聊天界面样式 */
 .chat-container {
     position: fixed;
     top: 0;
@@ -48,7 +29,26 @@ button {
 .chat-header {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.icon-fanhui1 {
+    margin-right: 10px;
+}
+
+.header-phone-number {
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.header-icons {
+    display: flex;
+}
+
+.header-icons .icon {
+    margin-left: 15px;
 }
 
 .chat-messages {
@@ -57,19 +57,78 @@ button {
     padding: 10px;
 }
 
+.date-separator {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin: 20px 0 10px;
+}
+
+.message-wrapper {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.sender-wrapper {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.message-content {
+    max-width: 70%;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.sender .message {
+    background-color: #0084ff;
+    color: white;
+    border-top-right-radius: 4px;
+}
+
+.receiver .message {
+    background-color: #f0f0f0;
+    border-top-left-radius: 4px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
 .chat-input-container {
     display: flex;
     align-items: center;
     padding: 10px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
 }
 
 .message-input {
     flex-grow: 1;
     margin: 0 10px;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 16px;
 }
 
-/* 基本图标样式 */
 .icon {
     width: 24px;
     height: 24px;
+    margin: 0 8px;
+    cursor: pointer;
 }
+
+/* 保持原有的表单样式 */

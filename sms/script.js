@@ -55,6 +55,7 @@ function addMessage(content, type) {
 
     const avatar = document.createElement('div');
     avatar.className = 'avatar';
+    avatar.innerHTML = `<svg class="icon icon-touxiang" aria-hidden="true"><use xlink:href="#icon-touxiang"></use></svg>`;
 
     const messageContent = document.createElement('div');
     messageContent.className = 'message-content';
@@ -66,10 +67,8 @@ function addMessage(content, type) {
     const time = document.createElement('div');
     time.className = 'message-time';
     
-    // 根据消息类型设置不同的时间
     const now = new Date();
     if (type === 'sender') {
-        // 发送者消息时间往前推一分钟
         now.setMinutes(now.getMinutes() - 1);
     }
     time.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -78,8 +77,8 @@ function addMessage(content, type) {
     messageContent.appendChild(time);
 
     if (type === 'sender') {
-        messageWrapper.appendChild(avatar);
         messageWrapper.appendChild(messageContent);
+        messageWrapper.appendChild(avatar);
     } else {
         messageWrapper.appendChild(avatar);
         messageWrapper.appendChild(messageContent);
