@@ -27,10 +27,10 @@ function generateMessage() {
         // 添加日期
         addDateSeparator();
 
-        // 添加快递公司的消息
+        // 添加快递公司的消息（发件人）
         addMessage(initialMessage, 'sender');
 
-        // 添加客户的回复
+        // 添加客户的回复（收件人）
         addMessage(response, 'receiver');
 
     } else {
@@ -76,9 +76,13 @@ function addMessage(content, type) {
     messageContent.appendChild(message);
     messageContent.appendChild(time);
 
-    // 对于发送者和接收者，我们都是先添加消息内容，再添加头像
-    messageWrapper.appendChild(messageContent);
-    messageWrapper.appendChild(avatar);
+    if (type === 'sender') {
+        messageWrapper.appendChild(messageContent);
+        messageWrapper.appendChild(avatar);
+    } else {
+        messageWrapper.appendChild(avatar);
+        messageWrapper.appendChild(messageContent);
+    }
 
     chatMessages.appendChild(messageWrapper);
     chatMessages.scrollTop = chatMessages.scrollHeight;
