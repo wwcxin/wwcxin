@@ -72,18 +72,59 @@ body {
 
 .sender-wrapper {
     flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.receiver-wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin: 0 10px;
     flex-shrink: 0;
+}
+
+.sender-wrapper .avatar {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.receiver-wrapper .avatar {
+    margin-right: 10px;
+    margin-left: 0;
 }
 
 .message-content {
     max-width: 70%;
+}
+
+.sender-wrapper .message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 将消息内容靠右对齐 */
+}
+
+.sender .message {
+    background-color: #8A2BE2; /* 紫色背景 */
+    color: white;
+    border-radius: 18px;
+    border-top-right-radius: 4px;
+    padding: 10px;
+    display: inline-block; /* 使背景自适应文字长度 */
+    max-width: 100%; /* 确保消息不会超出容器 */
+}
+
+.sender-wrapper .message-content {
+    margin-right: 0;
+}
+
+.receiver-wrapper .message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 将消息内容靠左对齐 */
 }
 
 .message {
@@ -101,7 +142,11 @@ body {
 .receiver .message {
     background-color: #E0E0E0; /* 灰色背景 */
     color: black;
+    border-radius: 18px;
     border-top-left-radius: 4px;
+    padding: 10px;
+    display: inline-block; /* 使背景自适应文字长度 */
+    max-width: 100%; /* 确保消息不会超出容器 */
 }
 
 .message-time {
