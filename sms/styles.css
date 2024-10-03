@@ -230,7 +230,7 @@ body {
 .chat-input-container {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 12px 10px; /* 稍微增加上下内边距 */
     background-color: #f8f8f8;
     border-top: 1px solid #e0e0e0;
 }
@@ -238,17 +238,30 @@ body {
 .message-input {
     flex-grow: 1;
     margin: 0 10px;
-    padding: 8px 12px;
+    padding: 10px 15px; /* 增加输入框的内边距 */
     border: 1px solid #e0e0e0;
     border-radius: 20px;
     font-size: 16px;
 }
 
-.icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 8px;
+/* 底部图标样式 */
+.chat-input-container .icon {
+    width: 36px; /* 增加底部图标大小 */
+    height: 36px; /* 增加底部图标大小 */
+    margin: 0 12px; /* 增加图标之间的间距 */
     cursor: pointer;
+}
+
+/* 为特定图标添加额外的样式 */
+.icon-add, .icon-sim1, .icon-emoji, .icon-mic {
+    fill: #666; /* 设置图标颜色 */
+}
+
+/* 调整输入框左右两侧图标的大小 */
+.chat-input-container .icon-add,
+.chat-input-container .icon-mic {
+    width: 36px; /* 左右两侧图标稍微大一些 */
+    height: 36px;
 }
 
 /* 保持原有的表单样式 */
@@ -257,4 +270,16 @@ body {
 .message-content-sender .message,
 .message-content-sender .message-time {
     max-width: calc(100% - 50px);
+}
+
+/* 顶部图标和头像样式 */
+.chat-header .icon,
+.avatar-sender,
+.avatar-receiver {
+    width: 24px;
+    height: 24px;
+}
+
+.chat-header .icon {
+    margin-left: 15px;
 }
