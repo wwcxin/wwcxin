@@ -67,10 +67,12 @@ body {
 .message-wrapper {
     display: flex;
     margin-bottom: 15px;
+    align-items: flex-end; /* 确保头像和消息底部对齐 */
 }
 
 .sender-wrapper {
     flex-direction: row-reverse;
+    justify-content: flex-start; /* 确保消息靠右 */
 }
 
 .avatar {
@@ -78,6 +80,7 @@ body {
     height: 40px;
     border-radius: 50%;
     margin: 0 10px;
+    flex-shrink: 0; /* 防止头像被压缩 */
 }
 
 .message-content {
@@ -91,13 +94,15 @@ body {
 }
 
 .sender .message {
-    background-color: #0084ff;
+    background-color: #8A2BE2; /* 紫色背景 */
     color: white;
     border-top-right-radius: 4px;
+    margin-right: 10px; /* 为头像留出空间 */
 }
 
 .receiver .message {
-    background-color: #f0f0f0;
+    background-color: #E0E0E0; /* 灰色背景 */
+    color: black; /* 确保文字在灰色背景上可读 */
     border-top-left-radius: 4px;
 }
 
@@ -105,6 +110,7 @@ body {
     font-size: 12px;
     color: #999;
     margin-top: 4px;
+    text-align: right; /* 时间靠右对齐 */
 }
 
 .chat-input-container {

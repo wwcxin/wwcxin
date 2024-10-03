@@ -76,13 +76,9 @@ function addMessage(content, type) {
     messageContent.appendChild(message);
     messageContent.appendChild(time);
 
-    if (type === 'sender') {
-        messageWrapper.appendChild(messageContent);
-        messageWrapper.appendChild(avatar);
-    } else {
-        messageWrapper.appendChild(avatar);
-        messageWrapper.appendChild(messageContent);
-    }
+    // 对于发送者和接收者，我们都是先添加消息内容，再添加头像
+    messageWrapper.appendChild(messageContent);
+    messageWrapper.appendChild(avatar);
 
     chatMessages.appendChild(messageWrapper);
     chatMessages.scrollTop = chatMessages.scrollHeight;
