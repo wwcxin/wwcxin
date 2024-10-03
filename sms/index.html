@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短信生成器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>短信生成器</h1>
+        <p class="description">快速生成快递签收短信，方便您进行各种模拟测试。请填写以下信息：</p>
+        <input type="text" id="phoneNumber" placeholder="对方手机号">
+        <input type="text" id="packageNumber" placeholder="快递包裹号">
+        <select id="courierCompany">
+            <option value="邮政快递">邮政快递</option>
+            <option value="顺丰速运">顺丰速运</option>
+            <option value="中通快递">中通快递</option>
+            <option value="圆通速递">圆通速递</option>
+            <option value="韵达快递">韵达快递</option>
+            <option value="申通快递">申通快递</option>
+        </select>
+        <select id="proofType">
+            <option value="签收证明">签收证明</option>
+            <option value="外包装完好证明">外包装完好证明</option>
+        </select>
+        <button onclick="generateMessage()">生成短信</button>
+    </div>
+    <div id="chatContainer" class="chat-container" style="display: none;">
+        <div class="chat-header">
+            <i class="fas fa-chevron-left back-button"></i>
+            <span id="headerPhoneNumber" class="header-phone-number"></span>
+            <div class="header-icons">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
