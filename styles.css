@@ -1,0 +1,255 @@
+/* 全局样式 */
+body {
+    background-color: #000; /* 为视频加载前提供一个深色背景 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 容器样式 */
+#main.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.row.my-card {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    display: flex;
+}
+
+.col-lg-4.photo-bg {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.3s ease;
+}
+
+.col-lg-4.photo-bg.fallback {
+    opacity: 0.1; /* 90% 透明 */
+    background-image: inherit; /* 继承body的背景图片 */
+}
+
+.col-lg-4.photo-bg:hover {
+    opacity: 1; /* 鼠标悬停时完全不透明 */
+}
+
+.col-lg-8.card {
+    padding: 30px;
+    flex: 1;
+}
+
+.my-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.photo-bg {
+    min-height: 200px;
+    background-image: url('https://source.unsplash.com/random/400x400');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 搜索框样式 */
+.searchBox {
+    width: 82%;
+    height: 35px;
+    border: 1px solid cadetblue;
+    outline: hidden;
+    border-radius: 2px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inputBox {
+    border: none;
+    width: 80%;
+    height: 26px;
+    line-height: 35px;
+    outline: none;
+    padding-left: 8px;
+    caret-color: #008B8B;
+    font-size: 14px;
+}
+
+.searchBtn {
+    width: 76px;
+    height: 33px;
+    border: none;
+    position: absolute;
+    right: 0;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    background-color: cornflowerblue;
+}
+
+.searchBtn:hover {
+    background-color: #497fdf;
+}
+
+/* 链接样式 */
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.custom-link {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.custom-link:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+}
+
+.custom-link.default { background-color: #3385ff; }
+.custom-link.purple { background-color: #af00ff; }
+.custom-link.green { background-color: #2ed000; }
+.custom-link.blue { background-color: #09c5de; }
+.custom-link.red { background-color: #ff7a7a; }
+.custom-link.yellow { background-color: #d4a40a; }
+.custom-link.gray { background-color: #444444; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .custom-link {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-link {
+        width: 100%;
+    }
+}
+
+/* 其他样式 */
+.title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: cadetblue;
+    margin: 20px 0;
+}
+
+.social {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.social li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social a {
+    color: #3385ff;
+    font-size: 24px;
+}
+
+/* 在文件末尾添加以下内容 */
+
+/* 音乐控制按钮样式 */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.music-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.music-control i {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.music-control-text {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* 视频背景样式 */
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+#video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 新增：视频遮罩层样式 */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25); /* 黑色遮罩，透明度为 50% */
+    z-index: 1;
+}
