@@ -55,12 +55,10 @@ button {
 }
 
 .back-button {
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     margin-right: 15px;
-    font-weight: 200; /* 使用更细的字重 */
-    color: black;
-    line-height: 1; /* 确保垂直对齐 */
+    color: #666;
 }
 
 .header-phone-number {
@@ -73,17 +71,11 @@ button {
     align-items: center;
 }
 
-.header-icons i {
+.header-icons > i, .header-icons > div {
     margin-left: 15px;
     cursor: pointer;
-    font-weight: normal;
-    color: black;
-    font-size: 20px;
-    width: 24px; /* 添加固定宽度 */
-    height: 24px; /* 添加固定高度 */
-    display: flex; /* 使用 flex 布局 */
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中 */
+    color: #666;
+    font-size: 24px;
 }
 
 /* 为每个特定的图标添加样式 */
@@ -224,12 +216,12 @@ button {
 }
 
 .chat-input-container > div {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
+    margin: 0 8px;
     cursor: pointer;
 }
 
@@ -239,14 +231,88 @@ button {
     color: white;
 }
 
-.message-input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    margin: 0 10px;
+.add-button::before,
+.add-button::after {
+    content: '';
+    position: absolute;
+    background-color: white;
 }
 
-.add-button i, .sim-card-button i, .emoji-button i, .mic-button i {
+.add-button::before {
+    width: 2px;
+    height: 16px;
+}
+
+.add-button::after {
+    width: 16px;
+    height: 2px;
+}
+
+.emoji-button, .mic-button {
+    background-color: transparent;
+}
+
+.emoji-button i, .mic-button i {
+    color: #666;
     font-size: 20px;
 }
+
+.add-button i, .emoji-button i, .mic-button i {
+    font-size: 20px;
+}
+
+.add-button i {
+    color: white;
+}
+
+.header-icons i, .emoji-button i, .mic-button i {
+    font-style: normal;
+    font-size: 20px;
+    color: #666;
+}
+
+/* 删除之前的 Unicode 相关样式 */
+
+.icon-options, .icon-sim-card {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* 选项图标 */
+.icon-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    width: 4px;
+    padding: 2px 0;
+}
+
+.icon-options::before,
+.icon-options::after,
+.icon-options span {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: #666;
+    border-radius: 50%;
+}
+
+.icon-options span {
+    display: block;
+}
+
+/* 调整图标在容器中的位置 */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons > div {
+    margin-left: 15px;
+}
+
+/* ... 保持其他样式不变 ... */

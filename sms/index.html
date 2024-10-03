@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>短信生成器</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="//at.alicdn.com/t/c/font_4701542_3ivp6z3qied.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,22 +29,44 @@
     </div>
     <div id="chatContainer" class="chat-container" style="display: none;">
         <div class="chat-header">
-            <i class="fas fa-chevron-left back-button"></i>
+            <svg class="icon back-button" aria-hidden="true">
+                <use xlink:href="#icon-arrow-left"></use>
+            </svg>
             <span id="headerPhoneNumber" class="header-phone-number"></span>
             <div class="header-icons">
-                <i class="fas fa-phone"></i>
-                <i class="fas fa-ellipsis-v"></i>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-phone"></use>
+                </svg>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-more"></use>
+                </svg>
             </div>
         </div>
         <div id="chatMessages" class="chat-messages"></div>
         
         <!-- 添加新的底部容器 -->
         <div class="chat-input-container">
-            <div class="add-button"><i class="fas fa-plus"></i></div>
-            <div class="sim-card-button"><i class="fas fa-sim-card"></i></div>
+            <div class="add-button">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-add"></use>
+                </svg>
+            </div>
+            <div class="sim-card-button">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-sim1"></use>
+                </svg>
+            </div>
             <input type="text" class="message-input" placeholder="输入消息...">
-            <div class="emoji-button"><i class="far fa-smile"></i></div>
-            <div class="mic-button"><i class="fas fa-microphone"></i></div>
+            <div class="emoji-button">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-emoji"></use>
+                </svg>
+            </div>
+            <div class="mic-button">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-mic"></use>
+                </svg>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
