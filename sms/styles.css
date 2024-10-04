@@ -272,7 +272,7 @@ body {
 
 /* 底部图标样式 */
 .bottom-icon {
-    width: 25px;
+    width: 30px;
     height: 25px;
     display: flex;
     justify-content: center;
@@ -288,7 +288,7 @@ body {
 /* 输入框样式 */
 .message-input {
     flex-grow: 1;
-    height: 25px;
+    height: 23px;
     margin: 0 15px;
     padding: 10px 15px;
     border: 1px solid #e0e0e0;
