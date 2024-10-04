@@ -1,4 +1,5 @@
 function generateMessage() {
+    updateStatusBarTime();
     const phoneNumber = document.getElementById('phoneNumber').value;
     const packageNumber = document.getElementById('packageNumber').value;
     const courierCompany = document.getElementById('courierCompany').value;
@@ -98,3 +99,58 @@ document.querySelector('.back-button').addEventListener('click', function() {
     document.getElementById('chatContainer').style.display = 'none';
     document.querySelector('.container').style.display = 'block';
 });
+
+// 在文件末尾添加以下函数
+function updateStatusBarTime() {
+    const statusBarTime = document.getElementById('statusBarTime');
+    const now = new Date();
+    statusBarTime.textContent = now.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: false });
+}
+
+// 初始更新时间
+updateStatusBarTime();
+
+// 每分钟更新一次时间
+setInterval(updateStatusBarTime, 60000);
+
+// 在 generateMessage 函数的开头调用 updateStatusBarTime
+function generateMessage() {
+    updateStatusBarTime();
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const packageNumber = document.getElementById('packageNumber').value;
+    const courierCompany = document.getElementById('courierCompany').value;
+    const proofType = document.getElementById('proofType').value;
+    const chatContainer = document.getElementById('chatContainer');
+    const chatMessages = document.getElementById('chatMessages');
+    const headerPhoneNumber = document.getElementById('headerPhoneNumber');
+    
+    if (phoneNumber && packageNumber) {
+        chatMessages.innerHTML = ''; // 清空之前的消息
+        chatContainer.style.display = 'flex';
+        headerPhoneNumber.textContent = phoneNumber;
+        document.querySelector('.container').style.display = 'none';
+
+        let initialMessage, response;
+
+        if (proofType === '签收证明') {
+            initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}是否收到？收到回复【是】谢谢！`;
+            const responses = ['已收到', '收到了', '拿到了'];
+            response = responses[Math.floor(Math.random() * responses.length)];
+        } else {
+            initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}收到时外包装是否完好？`;
+            response = '包装是好的';
+        }
+
+        // 添加日期
+        addDateSeparator();
+
+        // 添加快递公司的消息（发件人）
+        addMessage(initialMessage, 'sender');
+
+        // 添加客户的回复（收件人）
+        addMessage(response, 'receiver');
+
+    } else {
+        alert('请填写对方手机号和快递包裹号');
+    }
+}

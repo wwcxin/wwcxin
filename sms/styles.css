@@ -331,9 +331,17 @@ body {
     margin: 0 2px;
 }
 
-/* 调整聊天头部的上边距 */
+.status-bar .icon-naozhong {
+    width: 15px;
+    height: 15px;
+}
+
+/* 删除聊天头部的上边距 */
 .chat-header {
-    margin-top: 20px;
+    margin-top: 0;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* ... 保持其他样式不变 ... */
