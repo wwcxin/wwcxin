@@ -304,3 +304,36 @@ body {
 /* 删除或注释掉之前的 .chat-input-container .icon 相关样式 */
 
 /* ... 保持其他样式不变 ... */
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    padding: 0 10px;
+    background-color: #f8f8f8;
+    font-size: 12px;
+    color: #333;
+}
+
+.status-left, .status-right {
+    display: flex;
+    align-items: center;
+}
+
+.status-left .time {
+    margin-right: 5px;
+}
+
+.status-bar .icon {
+    width: 16px;
+    height: 16px;
+    margin: 0 2px;
+}
+
+/* 调整聊天头部的上边距 */
+.chat-header {
+    margin-top: 20px;
+}
+
+/* ... 保持其他样式不变 ... */
