@@ -234,106 +234,73 @@ body {
     align-self: flex-end;
 }
 
-.chat-input-container {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    padding: 10px 3%;
-    background-color: #f8f8f8;
-    border-top: 1px solid #e0e0e0;
-    z-index: 10;
-}
-
+/* 保留输入框样式，但移除高度设置 */
 .message-input {
     flex-grow: 1;
-    height: 36px;
+    max-width: 70%;
     margin: 0 2%;
-    padding: 0 12px;
+    padding: 10px 12px;
     border: 1px solid #e0e0e0;
     border-radius: 18px;
     font-size: 14px;
+    resize: none;
 }
 
+/* 保留图标样式 */
 .chat-input-container .icon {
     width: 36px;
     height: 36px;
     padding: 6px;
     box-sizing: border-box;
+    margin: 0 10px;
 }
 
 .icon-add, .icon-sim1, .icon-emoji, .icon-mic {
     fill: #666;
 }
 
-@media screen and (max-width: 320px) {
-    .chat-input-container {
-        padding: 8px 2%;
-    }
-    .message-input {
-        height: 32px;
-        font-size: 13px;
-    }
-    .chat-input-container .icon {
-        width: 32px;
-        height: 32px;
-        padding: 5px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .chat-input-container {
-        padding: 12px 4%;
-    }
-    .message-input {
-        height: 40px;
-        font-size: 15px;
-    }
-    .chat-input-container .icon {
-        width: 40px;
-        height: 40px;
-        padding: 7px;
-    }
+/* 底部容器样式 */
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    padding: 0 15px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
 }
 
 /* 底部图标样式 */
-.chat-input-container .icon {
-    width: 36px; /* 增加底部图标大小 */
-    height: 36px; /* 增加底部图标大小 */
-    margin: 0 8px; /* 减小图标间距 */
-    cursor: pointer;
+.bottom-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 为特定图标添加额外的样式 */
-.icon-add, .icon-sim1, .icon-emoji, .icon-mic {
-    fill: #666; /* 设置图标颜色 */
+.bottom-icon svg {
+    width: 60px;
+    height: 60px;
+    fill: #666;
 }
 
-/* 调整输入框左右两侧图标的大小 */
-.chat-input-container .icon-add,
-.chat-input-container .icon-mic {
-    width: 36px; /* 左右两侧图标稍微大一些 */
-    height: 36px;
+/* 输入框样式 */
+.message-input {
+    flex-grow: 1;
+    height: 75px;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    font-size: 16px;
+    resize: none;
+    display: flex;
+    align-items: center;
 }
 
-/* 保持原有的表单样式 */
+/* 移除之前的媒体查询，因为我们现在有固定大小 */
 
-/* 确保发件人消息和时间不会被头像遮挡 */
-.message-content-sender .message,
-.message-content-sender .message-time {
-    max-width: calc(100% - 50px);
-}
+/* 删除或注释掉之前的 .chat-input-container .icon 相关样式 */
 
-/* 顶部图标和头像样式 */
-.chat-header .icon,
-.avatar-sender,
-.avatar-receiver {
-    width: 24px;
-    height: 24px;
-}
-
-.chat-header .icon {
-    margin-left: 15px;
-}
+/* ... 保持其他样式不变 ... */
