@@ -264,7 +264,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 150px;
+    height: 40px;
     padding: 0 15px;
     background-color: #f8f8f8;
     border-top: 1px solid #e0e0e0;
@@ -272,8 +272,8 @@ body {
 
 /* 底部图标样式 */
 .bottom-icon {
-    width: 60px;
-    height: 60px;
+    width: 25px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -288,7 +288,7 @@ body {
 /* 输入框样式 */
 .message-input {
     flex-grow: 1;
-    height: 75px;
+    height: 30px;
     margin: 0 15px;
     padding: 10px 15px;
     border: 1px solid #e0e0e0;
