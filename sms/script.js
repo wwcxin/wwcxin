@@ -9,7 +9,7 @@ function generateMessage() {
     const headerPhoneNumber = document.getElementById('headerPhoneNumber');
     
     if (phoneNumber && packageNumber) {
-        chatMessages.innerHTML = ''; // 清空之前的消息
+        chatMessages.innerHTML = '';
         chatContainer.style.display = 'flex';
         headerPhoneNumber.textContent = phoneNumber;
         document.querySelector('.container').style.display = 'none';
@@ -18,8 +18,14 @@ function generateMessage() {
 
         if (proofType === '签收证明') {
             initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}是否收到？收到回复【是】谢谢！`;
-            const responses = ['已收到', '收到了', '拿到了'];
-            response = responses[Math.floor(Math.random() * responses.length)];
+            
+            // 根据快递公司选择不同的回复
+            if (courierCompany === '京东快递') {
+                response = '是';
+            } else {
+                const responses = ['已收到', '收到了', '拿到了'];
+                response = responses[Math.floor(Math.random() * responses.length)];
+            }
         } else {
             initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}收到时外包装是否完好？`;
             response = '包装是好的';
@@ -125,7 +131,7 @@ function generateMessage() {
     const headerPhoneNumber = document.getElementById('headerPhoneNumber');
     
     if (phoneNumber && packageNumber) {
-        chatMessages.innerHTML = ''; // 清空之前的消息
+        chatMessages.innerHTML = '';
         chatContainer.style.display = 'flex';
         headerPhoneNumber.textContent = phoneNumber;
         document.querySelector('.container').style.display = 'none';
@@ -134,8 +140,14 @@ function generateMessage() {
 
         if (proofType === '签收证明') {
             initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}是否收到？收到回复【是】谢谢！`;
-            const responses = ['已收到', '收到了', '拿到了'];
-            response = responses[Math.floor(Math.random() * responses.length)];
+            
+            // 根据快递公司选择不同的回复
+            if (courierCompany === '京东快递') {
+                response = '是';
+            } else {
+                const responses = ['已收到', '收到了', '拿到了'];
+                response = responses[Math.floor(Math.random() * responses.length)];
+            }
         } else {
             initialMessage = `你好${courierCompany}，这边给您送的包裹${packageNumber}收到时外包装是否完好？`;
             response = '包装是好的';
