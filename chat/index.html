@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI助手 - 智能对话</title>
+    <link rel="icon" type="image/ico" href="//gravatar.eas1.cn/avatar/4cc893d113dd74ceca73f9863f2c5446/">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="chat.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
     <div class="chat-container">
@@ -14,14 +16,15 @@
             <button class="back-button" onclick="window.location.href='../'">
                 <i class="fas fa-arrow-left"></i> 返回
             </button>
-            <h1 class="text-center">AI智能助手</h1>
+            <h1 class="text-center">雪豹AI助手</h1>
         </div>
         
         <iframe
             id="chatFrame"
             src="https://nas.b23.run:128/ui/chat/3d190b0ffd507ec0"
             class="chat-frame"
-            allow="microphone">
+            allow="microphone"
+            loading="lazy">
         </iframe>
 
         <div class="loading-overlay" id="loadingOverlay">

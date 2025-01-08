@@ -3,13 +3,13 @@ body, html {
     padding: 0;
     height: 100vh;
     overflow: hidden;
+    background-color: #f5f5f5;
 }
 
 .chat-container {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
 }
@@ -19,6 +19,7 @@ body, html {
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
+    position: relative;
 }
 
 .header h1 {
@@ -31,19 +32,21 @@ body, html {
     flex: 1;
     width: 100%;
     border: none;
+    background-color: #fff;
 }
 
 .loading-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.95);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    flex-direction: column;
 }
 
 .spinner {
@@ -53,6 +56,7 @@ body, html {
     border-top: 5px solid #3498db;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    margin-bottom: 20px;
 }
 
 @keyframes spin {
@@ -62,17 +66,35 @@ body, html {
 
 .back-button {
     position: absolute;
-    top: 15px;
+    top: 50%;
     left: 15px;
+    transform: translateY(-50%);
     padding: 8px 15px;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .back-button:hover {
     background-color: #2980b9;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .back-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
 } 
