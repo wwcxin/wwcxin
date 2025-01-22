@@ -1,19 +1,71 @@
-- 👋 Hi, I’m @wwcxin
-- 本人学识渊博，经验丰富，代码风骚，效率恐怖。 C/C＋＋ ， java ， php 无不精通，熟练掌握各种框架。
+# 勿忘初心 - 个人主页
 
-- 会 DDOS 一秒钟死一个站，会注入，会上传，会Xss，会破解，会嗅探，会开发，会业务，会运维，会渗透。互联网内，我无处不在。
+一个简约而优雅的个人主页，集成了多个实用工具。背景使用动态视频，支持深色/浅色主题切换。
 
-- 全国漏洞认识深刻，熟练掌握各种操作系统内核。认真学习过《黑客攻防技术宝典》，《逆向工程》，《游戏waigua攻防艺术》等专业书籍。深山苦练十余载，一天只睡2小时。
+## 功能特点
 
-- 听指挥，执行快，脾气好，不喷人，操作虎，意识强，渗透快， shell 多，能过狗，能过盾。
+- 🌈 动态视频背景
+- 🌙 深色/浅色主题切换
+- 💻 响应式设计
+- 🔧 集成多个实用工具
 
-- 千里之外取服务器首级，瞬息之间爆管理员狗头，压安全狗如压草芥。电话通知出 Bug 后，秒登 vpn ，千里之外定位问题，瞬息之间修复上线。
+### 主要工具
 
-- 只有你想不到的，没有我做不到的。
+1. **雪豹AI** - 智能问答助手
+   - 基于先进的AI模型
+   - 实时对话交互
+   - 支持多种问题类型
 
-- 以上都是吹的，我只会划水摸鱼，我是个废物
+2. **条码生成器** - 快速生成条形码
+   - 支持批量生成
+   - 可自定义条码样式
+   - 支持剪贴板操作
 
-<!---
-wwcxin/wwcxin is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+3. **短信生成器** - 模拟快递短信
+   - 支持多家快递公司
+   - 模拟真实短信界面
+   - 提供多种证明类型
+
+## 技术栈
+
+- HTML5
+- CSS3
+- JavaScript
+- 第三方库：
+  - JsBarcode (条形码生成)
+  - IconFont (图标支持)
+
+## 目录结构 
+
+├── index.html # 主页
+├── chat.html # AI聊天页面
+├── barcode.html # 条码生成器
+├── sms.html # 短信生成器
+├── assets/
+│ ├── css/ # 样式文件
+│ │ ├── style.css # 主页样式
+│ │ ├── chat.css # AI聊天样式
+│ │ ├── barcode.css # 条码生成器样式
+│ │ └── sms.css # 短信生成器样式
+│ └── js/ # 脚本文件
+│ ├── main.js # 主页脚本
+│ ├── chat.js # AI聊天脚本
+│ ├── barcode.js # 条码生成器脚本
+│ └── sms.js # 短信生成器脚本
+
+## 使用说明
+
+1. 主页提供四个主要功能入口
+2. 支持通过顶部按钮切换深色/浅色主题
+3. 底部提供社交媒体链接
+
+## 联系方式
+
+- GitHub: [@wwcxin](https://github.com/wwcxin)
+- Email: hi@b23.run
+- QQ: [点击添加](https://qm.qq.com/q/UZcoAr5e4a)
+- 哔哩哔哩: [个人空间](https://space.bilibili.com/193373978)
+
+## 许可证
+
+MIT License
